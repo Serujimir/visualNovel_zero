@@ -12,12 +12,23 @@
         android:id="@+id/backGround"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:alpha="0.5"
+        android:alpha="1"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/scrollView" />
+
+    <ImageView
+        android:id="@+id/backText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.55"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_text" />
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -44,7 +55,7 @@
                 android:padding="8dp"
                 android:text="Haha"
                 android:textAllCaps="false"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textIsSelectable="false"
                 android:textSize="20sp" />
 
@@ -62,34 +73,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_margin="8dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <ImageView
+        <Button
             android:id="@+id/fingerSpaceBack"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_weight="0"
+            android:background="@mipmap/left_arrow"
             android:onClick="fingerSpaceClickBack"
-            app:srcCompat="@android:drawable/screen_background_dark_transparent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
+        <Button
             android:id="@+id/fingerSpace"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="8dp"
-            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="0"
+            android:background="@mipmap/right_arrow"
             android:onClick="fingerSpaceClick"
-            app:srcCompat="@android:drawable/screen_background_dark_transparent" />
-
-    </LinearLayout>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
