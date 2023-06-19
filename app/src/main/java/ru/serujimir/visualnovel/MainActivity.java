@@ -4,18 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SearchRecentSuggestionsProvider;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
     private int current_stroke = 0;
@@ -40,17 +36,27 @@ public class MainActivity extends AppCompatActivity {
     public void Next (View v) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("What do you want to do?");
-        builder.setPositiveButton("Exit from the app", new DialogInterface.OnClickListener() {
+        final CharSequence[] buttons = {"Documentation", "About author", "Exit from the app"};
+        builder.setItems(buttons, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                finishAndRemoveTask();
-            }
-        });
-        builder.setNegativeButton("Documentation", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Intent Documentation = new Intent(MainActivity.this, Menu.class);
-                startActivity(Documentation);
+                switch (which) {
+
+                    case 0:
+                        Intent Documentation = new Intent(MainActivity.this, DocumentationActivity.class);
+                        startActivity(Documentation);
+                        break;
+
+                    case 1:
+                        Intent Author = new Intent(MainActivity.this, AuthorActivity.class);
+                        startActivity(Author);
+                        break;
+
+                    case 2:
+                        finishAndRemoveTask();
+                        break;
+
+                }
             }
         });
         AlertDialog alertDialog = builder.create();
