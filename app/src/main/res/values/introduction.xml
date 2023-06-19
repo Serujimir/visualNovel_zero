@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="strokes">
+        <item>Welcome to the visualNovel!</item>
+        <item>The app was made by Serujimir</item>
+        <item>Also known as Sergeev Vladimir</item>
+        <item>Current version of app is: v0.1</item>
+        <item>Nya!</item>
+    </string-array>
+</resources>
