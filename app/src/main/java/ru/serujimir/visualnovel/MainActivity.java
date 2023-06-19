@@ -7,6 +7,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SearchRecentSuggestionsProvider;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -39,10 +40,17 @@ public class MainActivity extends AppCompatActivity {
     public void Next (View v) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("What do you want to do?");
-        builder.setNeutralButton("Exit from the app", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Exit from the app", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 finishAndRemoveTask();
+            }
+        });
+        builder.setNegativeButton("Documentation", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent Documentation = new Intent(MainActivity.this, Menu.class);
+                startActivity(Documentation);
             }
         });
         AlertDialog alertDialog = builder.create();
@@ -58,12 +66,12 @@ public class MainActivity extends AppCompatActivity {
             }
             else
             {
-                mainText.setText("Ouch! Something went wrong!");
+                mainText.setText("Ouch! Something went wrong! (0x00001 error) (Please, check the official documentation in the menu)");
             }
 
         } catch (Exception e)
         {
-            mainText.setText("Ouch! Something went wrong!");
+            mainText.setText("Ouch! Something went wrong! (0x00001 error) (Please, check the official documentation in the menu)");
         }
         try {
             if (current_stroke == 0 || current_stroke == 3 || text[current_stroke].toString().equals("... And continued!")){
@@ -79,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         }
         catch (Exception e)
         {
-            mainText.setText("Ouch! Something went wrong!");
+            mainText.setText("Ouch! Something went wrong! (0x00001 error) (Please, check the official documentation in the menu)");
         }
     }
     public void fingerSpaceClickBack (View v) {
@@ -96,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
         } catch (Exception e)
         {
-            mainText.setText("Ouch! Something went wrong!");
+            mainText.setText("Ouch! Something went wrong! (0x00001 error) (Please, check the official documentation in the menu)");
         }
         try {
             if (current_stroke == 0 || current_stroke == 3 || text[current_stroke].toString().equals("... And continued!")){
@@ -112,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
         }
         catch (Exception e)
         {
-            mainText.setText("Ouch! Something went wrong!");
+            mainText.setText("Ouch! Something went wrong! (0x00001 error) (Please, check the official documentation in the menu)");
         }
 
     }

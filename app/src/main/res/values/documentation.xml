@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="error_list">
+        <item>0x00001 error - this error occurs if no continuation is found for the text</item>
+    </string-array>
+</resources>
