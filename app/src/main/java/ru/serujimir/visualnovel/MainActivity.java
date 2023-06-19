@@ -66,11 +66,14 @@ public class MainActivity extends AppCompatActivity {
             mainText.setText("Ouch! Something went wrong!");
         }
         try {
-            if (current_stroke == 0){
+            if (current_stroke == 0 || current_stroke == 3 || text[current_stroke].toString().equals("... And continued!")){
                 backGround.setBackgroundResource(R.drawable.zero);
             }
             else if(text[current_stroke].toString().equals("Nya!"))
             {
+                backGround.setBackgroundResource(R.drawable.nya);
+            }
+            else if(text[current_stroke].toString().equals("Arigato!")) {
                 backGround.setBackgroundResource(R.drawable.nya);
             }
         }
@@ -96,11 +99,14 @@ public class MainActivity extends AppCompatActivity {
             mainText.setText("Ouch! Something went wrong!");
         }
         try {
-            if (current_stroke == 0){
+            if (current_stroke == 0 || current_stroke == 3 || text[current_stroke].toString().equals("... And continued!")){
                 backGround.setBackgroundResource(R.drawable.zero);
             }
             else if(text[current_stroke].toString().equals("Nya!"))
             {
+                backGround.setBackgroundResource(R.drawable.nya);
+            }
+            else if(text[current_stroke].toString().equals("Arigato!")) {
                 backGround.setBackgroundResource(R.drawable.nya);
             }
         }
